@@ -1,16 +1,26 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("com.apollographql.apollo3").version("3.7.3")
+    kotlin("kapt")
 }
 apply(from = "${rootProject.projectDir}/jacoco.gradle")
+
+apollo {
+    service("service") {
+        packageName.set("com.cesarwillymc")
+    }
+}
+
 android {
     namespace = "com.cesarwillymc.animeapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.cesarwillymc.animeapp"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -50,15 +60,28 @@ android {
 }
 
 dependencies {
+    // Dagger
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    // Apollo
+    implementation("com.apollographql.apollo3:apollo-runtime:3.7.3")
+
+    // Android KTX
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
+    // UI
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+
+    // View Model
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -68,7 +91,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
 
-
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
 project.afterEvaluate {
     this.tasks.getByName("clean").dependsOn("installGitHooks")
     this.tasks.getByName("assemble").dependsOn("installGitHooks")

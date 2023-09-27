@@ -1,4 +1,4 @@
-package com.cesarwillymc.animeapp
+package com.cesarwillymc.animeapp.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

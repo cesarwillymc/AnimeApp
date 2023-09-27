@@ -5,12 +5,8 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version "1.20.0"
     id("org.jmailen.kotlinter") version "3.12.0"
     id("com.github.ben-manes.versions") version "0.39.0"
-}
+    id("com.google.dagger.hilt.android") version "2.48" apply false
 
-buildscript {
-    dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.43.2")
-    }
 }
 allprojects {
     apply(plugin = "org.jmailen.kotlinter")
