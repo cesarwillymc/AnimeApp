@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
-
+apply(from = "${rootProject.projectDir}/jacoco.gradle")
 android {
     namespace = "com.cesarwillymc.animeapp"
     compileSdk = 33
@@ -66,4 +66,45 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+
+project.afterEvaluate {
+    this.tasks.getByName("clean").dependsOn("installGitHooks")
+    this.tasks.getByName("assemble").dependsOn("installGitHooks")
+    tasks.create("executeTest") {
+        group = "verification"
+        dependsOn("test")
+    }
+    tasks.create("executeValidations") {
+        group = "verification"
+        dependsOn("lintKotlin")
+        dependsOn("detekt")
+        dependsOn("executeTest") /* Execute all test */
+    }
+    tasks.create("formatAndValidate") {
+        group = "verification"
+        dependsOn("formatKotlin")
+        dependsOn("executeValidations")
+        tasks.getByName("executeValidations").mustRunAfter("formatKotlin")
+    }
+    tasks.create("copyGitHooks", Copy::class.java) {
+        description = "Copies the git hooks from team-props/git-hooks to the .git folder."
+        from("${rootDir}/team-props/git-hooks") {
+            include("**/*.sh")
+            rename("(.*).sh", "$1")
+        }
+        into("${rootDir}/.git/hooks")
+    }
+    tasks.create("installGitHooks", Exec::class.java) {
+        description = "Installs the pre-commit git hooks from team-props/git-hooks."
+        group = "git hooks"
+        workingDir = rootDir
+        commandLine = listOf("chmod")
+        args("-R", "+x", ".git/hooks/")
+        dependsOn("copyGitHooks")
+        doLast {
+            logger.info("---- Git hook installed successfully.")
+        }
+    }
 }
