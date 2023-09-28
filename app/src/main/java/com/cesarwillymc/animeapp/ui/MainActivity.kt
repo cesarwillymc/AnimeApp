@@ -3,44 +3,53 @@ package com.cesarwillymc.animeapp.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.cesarwillymc.animeapp.ui.components.CustomBottomAppBar
+import com.cesarwillymc.animeapp.ui.navigation.action.BottomAppBarAction
+import com.cesarwillymc.animeapp.ui.navigation.graph.CustomNavGraph
+import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AnimeAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                val navController = rememberNavController()
+                val bottomActions =
+                    remember(navController) { BottomAppBarAction(navController) }
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentRoute =
+                    navBackStackEntry?.destination?.route ?: BottomAppBarRoute.Main.path
+                Scaffold(
+                    bottomBar = {
+                        CustomBottomAppBar(
+                            actions = bottomActions,
+                            currentRoute = currentRoute,
+                            showGiftBottomAppBar = false
+                        )
+                    }
+                ) { paddingValues ->
+                    Box(modifier = Modifier.padding(paddingValues)) {
+                        CustomNavGraph(
+                            navController = navController,
+                            startDestination = currentRoute,
+                        )
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AnimeAppTheme {
-        Greeting("Android")
     }
 }

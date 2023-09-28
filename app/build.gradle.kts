@@ -66,7 +66,7 @@ dependencies {
     // Dagger
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
-
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     // Apollo
     implementation("com.apollographql.apollo3:apollo-runtime:3.7.3")
 
@@ -81,6 +81,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    // Unit test
+    implementation("androidx.navigation:navigation-compose:2.7.3")
 
     // View Model
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")

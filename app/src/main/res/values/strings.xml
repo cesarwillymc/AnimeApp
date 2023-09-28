@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AnimeApp</string>
+    <string name="home_bottom_bar_label">Home</string>
+    <string name="wishlist_bottom_bar_label">Wishlist</string>
+    <string name="gift_bottom_bar_label">Gift</string>
 </resources>

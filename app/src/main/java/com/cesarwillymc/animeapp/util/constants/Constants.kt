@@ -5,4 +5,7 @@ const val ZERO = 0
 const val ZERO_D = 0.0
 const val ZERO_F = 0f
 const val ONE = 1
+const val ONE_F = 1f
+
+const val FORMAT_DEEPLINK = "%s%s"
 
