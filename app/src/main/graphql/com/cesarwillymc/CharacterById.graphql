@@ -14,7 +14,6 @@ query CharacterById($characterId: ID!){
             dimension
             name
             type
-            id
         }
         name
         species
