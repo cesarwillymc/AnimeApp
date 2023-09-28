@@ -61,7 +61,8 @@ fun CustomNavGraph(
             deepLinks = HomeRoute.Detail.path.generateDeepLinks()
         ) {
             DetailScreen(
-                detailViewModel = hiltViewModel()
+                detailViewModel = hiltViewModel(),
+                navigateUp = navController::navigateUp
             )
         }
 

@@ -65,6 +65,7 @@ android {
 dependencies {
     // Dagger
     implementation("com.google.dagger:hilt-android:2.48")
+    implementation("androidx.paging:paging-compose:3.2.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     // Apollo
@@ -92,6 +93,9 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:1.4.0")
 
     // Unit test
     testImplementation("junit:junit:4.13.2")

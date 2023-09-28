@@ -3,4 +3,10 @@
     <string name="home_bottom_bar_label">Home</string>
     <string name="wishlist_bottom_bar_label">Wishlist</string>
     <string name="gift_bottom_bar_label">Gift</string>
+    <string name="til_try_again">Error try again\n</string>
+    <string name="til_home">Home</string>
+    <string name="desc_characters_empty">No found characters\n</string>
+    <string name="til_error_load_items">Error loading characters</string>
+    <string name="desc_card_character">Item %1$s</string>
+    <string name="desc_card_character_image">Character Image</string>
 </resources>
