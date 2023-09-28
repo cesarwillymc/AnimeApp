@@ -99,6 +99,15 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    testImplementation("io.mockk:mockk:1.12.5")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("app.cash.turbine:turbine:1.0.0")
+
+    // Apollo test GraphQL
+    testImplementation("com.apollographql.apollo3:apollo-mockserver:3.7.3")
+
 }
 
 // Allow references to generated code
