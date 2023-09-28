@@ -41,6 +41,6 @@ class CharacterPager(private val useCase: GetCharactersUseCase) :
 
     companion object {
         const val LIMIT = 20
-        const val INITIAL_OFFSET = 0
+        const val INITIAL_OFFSET = 1
     }
 }

@@ -1,7 +1,7 @@
 package com.cesarwillymc.animeapp.presentation.detail
 
 import androidx.compose.runtime.Composable
-import kotlin.reflect.KFunction0
+import com.cesarwillymc.animeapp.presentation.detail.viewModel.DetailViewModel
 
 @Composable
 fun DetailScreen(

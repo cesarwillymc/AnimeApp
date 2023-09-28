@@ -8,6 +8,9 @@ import com.cesarwillymc.animeapp.data.sources.character.entities.CharacterListRe
 import com.cesarwillymc.animeapp.data.sources.character.entities.EpisodeResponse
 import com.cesarwillymc.animeapp.data.sources.character.entities.LocationResponse
 import com.cesarwillymc.animeapp.data.sources.character.entities.OriginResponse
+import com.cesarwillymc.animeapp.data.sources.character.local.entities.CharacterDetailEntity
+import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterDetail
+import com.cesarwillymc.animeapp.domain.usecase.entities.Episode
 
 
 fun CharactersQuery.Characters.toList(): CharacterListResponse {
@@ -65,6 +68,47 @@ fun CharacterByIdQuery.Character.toDetail(): CharacterDetailResponse {
                 type = it.type.orEmpty()
             )
         }
-
     )
+}
+
+fun CharacterDetail.toDatabase(): CharacterDetailEntity {
+    return CharacterDetailEntity(
+            created = created,
+            gender = gender,
+            id = id,
+            image = image,
+            name = name,
+            species = species,
+            status = status,
+            type = type,
+            location = location?.let {
+                LocationResponse(
+                    it.dimension,
+                    it.name,
+                    it.type
+                )
+            },
+            episode = episode?.toListEpisodeResponse(),
+            origin = origin?.let {
+                OriginResponse(
+                    it.dimension,
+                    it.name,
+                    it.type
+                )
+            }
+        )
+
+}
+
+fun List<Episode?>.toListEpisodeResponse(): List<EpisodeResponse> {
+    return mapNotNull { item ->
+        item?.let {
+            EpisodeResponse(
+                airDate = it.airDate,
+                created = it.created,
+                episode = it.episode,
+                name = it.name
+            )
+        }
+    }
 }

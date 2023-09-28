@@ -11,5 +11,6 @@ data class CharacterDetail(
     val type: String,
     val location: Location?,
     val episode: List<Episode>?,
-    val origin: Origin?
+    val origin: Origin?,
+    val isWishlist: Boolean = false
 )
