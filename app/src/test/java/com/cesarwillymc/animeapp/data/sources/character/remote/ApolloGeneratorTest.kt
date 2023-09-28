@@ -1,14 +1,14 @@
 package com.cesarwillymc.animeapp.data.sources.character.remote
 
 object ApolloGeneratorTest {
-    val characterID = "381"
-    val characterNoFound = """{
+    const val characterID = "381"
+    const val characterNoFound = """{
   "data": {
     "character": null
   }
 }"""
 
-    val character381 = """
+    const val character381 = """
         {
           "data": {
             "character": {
@@ -47,7 +47,7 @@ object ApolloGeneratorTest {
           }
         }
     """
-    val characters = """{
+    const val characters = """{
   "data": {
     "characters": {
       "info": {
