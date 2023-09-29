@@ -25,11 +25,17 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Change wrapper permissions
-        run: chmod +x ./gradlew
-
-      - name: Clean Gradle Cache
-        run: ./gradlew clean
+      - name: set up gradle
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/buildSrc/**/*.kt') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       - name: Update local.properties
         run: |
           cat <<EOF > ./local.properties
