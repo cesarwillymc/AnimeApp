@@ -34,14 +34,16 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/buildSrc/**/*.kt') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-        env:
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Update local.properties
+        run: |
+          cat <<EOF > ./local.properties
           url_graphql=${{ secrets.URL_GRAPHQL }}
           name_database=${{ secrets.NAME_DATABASE }}
           split_io_key=${{ secrets.SPLIT_IO_KEY }}
           feature_flag=${{ secrets.FEATURE_FLAG }}
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-        
+          EOF
       - name: Execute validations
         run: ./gradlew executeValidations
 
