@@ -30,7 +30,14 @@ jobs:
 
       - name: Clean Gradle Cache
         run: ./gradlew clean
-
+      - name: Update local.properties
+        run: |
+          cat <<EOF > ./local.properties
+          url_graphql=${{ secrets.url_graphql }}
+          name_database=${{ secrets.name_database }}
+          split_io_key=${{ secrets.split_io_key }}
+          feature_flag=${{ secrets.feature_flag }}
+          EOF
       - name: Execute validations
         run: ./gradlew executeValidations
 
