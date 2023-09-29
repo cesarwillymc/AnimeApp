@@ -37,13 +37,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Update local.properties
-        run: |
-          cat <<EOF > ./local.properties
-          url_graphql=${{ secrets.url_graphql }}
-          name_database=${{ secrets.name_database }}
-          split_io_key=${{ secrets.split_io_key }}
-          feature_flag=${{ secrets.feature_flag }}
-          EOF
+        env:
+          url_graphql=${{ secrets.URL_GRAPHQL }}
+          name_database=${{ secrets.NAME_DATABASE }}
+          split_io_key=${{ secrets.SPLIT_IO_KEY }}
+          feature_flag=${{ secrets.FEATURE_FLAG }}
       - name: Execute validations
         run: ./gradlew executeValidations
 
