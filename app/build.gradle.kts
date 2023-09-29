@@ -125,6 +125,9 @@ dependencies {
     // Apollo test GraphQL
     testImplementation("com.apollographql.apollo3:apollo-mockserver:3.7.3")
 
+    // Split IO
+    implementation("io.split.client:android-client:3.3.0")
+
 }
 
 // Allow references to generated code

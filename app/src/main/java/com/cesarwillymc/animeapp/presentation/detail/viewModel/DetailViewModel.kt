@@ -1,5 +1,6 @@
 package com.cesarwillymc.animeapp.presentation.detail.viewModel
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,7 +10,10 @@ import com.cesarwillymc.animeapp.domain.usecase.SaveCharacterUseCase
 import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterDetail
 import com.cesarwillymc.animeapp.presentation.detail.events.DetailUiState
 import com.cesarwillymc.animeapp.ui.navigation.route.HomeRoute
+import com.cesarwillymc.animeapp.ui.splitIo.SplitConfig
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
+import com.cesarwillymc.animeapp.util.constants.EVENT_FAVORITE
+import com.cesarwillymc.animeapp.util.constants.EVENT_REM_FAVORITE
 import com.cesarwillymc.animeapp.util.state.Result
 import com.cesarwillymc.animeapp.util.state.getData
 import com.cesarwillymc.animeapp.util.state.isSuccess
@@ -33,6 +37,7 @@ class DetailViewModel @Inject constructor(
     val openBottomSheet = _openBottomSheet.asStateFlow()
     val detailUiState = _detailUiState.asStateFlow()
     private var characterId = MutableStateFlow(EMPTY_STRING)
+
     init {
         onLoadArgument()
     }
@@ -89,6 +94,7 @@ class DetailViewModel @Inject constructor(
                             )
                         )
                     }
+                    SplitConfig.splitClient?.track(EVENT_REM_FAVORITE, id)
                 }
             }
         }
@@ -105,6 +111,7 @@ class DetailViewModel @Inject constructor(
                             )
                         )
                     }
+                    SplitConfig.splitClient?.track(EVENT_FAVORITE, detail.id)
                     onOpenBottomSheet()
                 }
             }
