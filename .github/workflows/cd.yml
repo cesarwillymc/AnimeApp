@@ -30,8 +30,10 @@ jobs:
 
       - name: Clean Gradle Cache
         run: ./gradlew clean
+
       - name: Execute validations
         run: ./gradlew executeValidations
+
       - name: Build App
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
