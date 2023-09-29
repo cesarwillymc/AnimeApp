@@ -1,4 +1,4 @@
-package com.cesarwillymc.animeapp.presentation.wishlist.components
+package com.cesarwillymc.animeapp.presentation.favorite.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize

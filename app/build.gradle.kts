@@ -84,6 +84,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3:1.2.0-alpha08")
+
+    // Constraint
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     // Unit test
     implementation("androidx.navigation:navigation-compose:2.7.3")
 

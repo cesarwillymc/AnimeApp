@@ -1,11 +1,11 @@
-package com.cesarwillymc.animeapp.presentation.wishlist
+package com.cesarwillymc.animeapp.presentation.favorite
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.cesarwillymc.animeapp.presentation.wishlist.components.FavoriteContent
-import com.cesarwillymc.animeapp.presentation.wishlist.viewModel.FavoritesViewModel
+import com.cesarwillymc.animeapp.presentation.favorite.components.FavoriteContent
+import com.cesarwillymc.animeapp.presentation.favorite.viewModel.FavoritesViewModel
 
 @Composable
 fun FavoriteScreen(

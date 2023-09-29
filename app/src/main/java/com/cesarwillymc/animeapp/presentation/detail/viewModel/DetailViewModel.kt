@@ -1,6 +1,5 @@
 package com.cesarwillymc.animeapp.presentation.detail.viewModel
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -47,10 +46,6 @@ class DetailViewModel @Inject constructor(
 
     fun onLoadDetailPresentation() {
         viewModelScope.launch {
-            Log.e(
-                "Detail212",
-                "Class ${characterId.value}"
-            )
             _detailUiState.update { it.copy(isLoading = true) }
             getCharacterDetailUseCase(characterId.value).let { result ->
                 when (result) {
@@ -66,10 +61,6 @@ class DetailViewModel @Inject constructor(
                                 isSuccess = true
                             )
                         }
-                        Log.e(
-                            "Detail2",
-                            "Class ${detailUiState.value.isSuccess} and ${detailUiState.value.detail == null} ${detailUiState.value.detail}"
-                        )
                     }
                 }
             }
@@ -77,15 +68,7 @@ class DetailViewModel @Inject constructor(
     }
 
     fun onClickFavorite() {
-
-        Log.e(
-            "Detail",
-            "Class ${detailUiState.value.isSuccess} and ${detailUiState.value.detail == null} ${detailUiState.value.detail}"
-        )
-
         detailUiState.value.detail?.let {
-            Log.e("Detail", "Class ${detailUiState.value.detail}")
-
             if (it.isWishlist) {
                 removeFavoriteCharacter(it.id)
             } else {
@@ -106,7 +89,6 @@ class DetailViewModel @Inject constructor(
                             )
                         )
                     }
-                    onOpenBottomSheet()
                 }
             }
         }
@@ -119,7 +101,7 @@ class DetailViewModel @Inject constructor(
                     _detailUiState.update { update ->
                         DetailUiState(
                             detail = update.detail?.copy(
-                                isWishlist = false
+                                isWishlist = true
                             )
                         )
                     }

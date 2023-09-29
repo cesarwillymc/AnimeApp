@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import com.cesarwillymc.animeapp.presentation.detail.DetailScreen
 import com.cesarwillymc.animeapp.presentation.gift.GiftScreen
 import com.cesarwillymc.animeapp.presentation.home.HomeScreen
-import com.cesarwillymc.animeapp.presentation.wishlist.FavoriteScreen
+import com.cesarwillymc.animeapp.presentation.favorite.FavoriteScreen
 import com.cesarwillymc.animeapp.ui.navigation.action.HomeAction
 import com.cesarwillymc.animeapp.ui.navigation.deeplink.generateDeepLinks
 import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute

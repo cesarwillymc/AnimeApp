@@ -1,4 +1,4 @@
-package com.cesarwillymc.animeapp.presentation.wishlist.viewModel
+package com.cesarwillymc.animeapp.presentation.favorite.viewModel
 
 import androidx.lifecycle.ViewModel
 import com.cesarwillymc.animeapp.domain.usecase.GetFavoriteCharactersUseCase

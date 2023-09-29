@@ -24,8 +24,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import coil.compose.rememberImagePainter
+import com.cesarwillymc.animeapp.R
 import com.cesarwillymc.animeapp.util.constants.ONE_F
 import com.cesarwillymc.animeapp.util.constants.ZERO
 import com.cesarwillymc.animeapp.util.constants.ZERO_F
@@ -79,7 +82,7 @@ fun ZoomImage(
             painter = rememberImagePainter(imageUrl, builder = {
                 crossfade(true)
             }),
-            contentDescription = null,
+            contentDescription = stringResource(R.string.desc_image_zoom),
             modifier = Modifier
                 .height(height)
                 .fillMaxWidth()
@@ -90,7 +93,8 @@ fun ZoomImage(
                     translationX = offset.x
                     translationY = offset.y
                 }
-                .transformable(state = state)
+                .transformable(state = state),
+            contentScale = ContentScale.Crop
         )
     }
 }

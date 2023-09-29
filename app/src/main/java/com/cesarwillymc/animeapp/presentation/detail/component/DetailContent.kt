@@ -3,6 +3,7 @@ package com.cesarwillymc.animeapp.presentation.detail.component
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.cesarwillymc.animeapp.R
@@ -26,13 +27,10 @@ fun DetailContent(
             ) {
                 Icon(
                     painter = painterResource(
-                        id = if (detailUiState.detail?.isWishlist.orEmpty()) {
-                            R.drawable.ic_favorite
-                        } else {
-                            R.drawable.ic_wishlist_red
-                        }
+                        id = R.drawable.ic_favorite
                     ),
                     contentDescription = stringResource(R.string.desc_btn_favorite),
+                    tint = if (detailUiState.detail?.isWishlist.orEmpty()) Color.Red else Color.Gray
                 )
             }
         },
@@ -41,7 +39,7 @@ fun DetailContent(
                 DetailViewContent(
                     character = detailUiState.detail
                 )
-            } else {
+            } else if (!detailUiState.isLoading) {
                 DetailErrorContent(onClickRetry)
             }
         }

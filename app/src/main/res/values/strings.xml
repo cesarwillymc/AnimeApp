@@ -17,4 +17,14 @@
     <string name="desc_no_favorites">I cannot found your favorites characters</string>
     <string name="lbl_error">Error</string>
     <string name="desc_error_data">Something happens, data no found</string>
+    <string name="desc_image_zoom">Image zoom</string>
+    <string name="desc_arrow_select">Arrow select</string>
+    <string name="desc_onclick">OnClick %1$s</string>
+    <string name="til_origin">Origin</string>
+    <string name="til_current_location">Current Location</string>
+    <string name="desc_dimension">Dimension: %1$s</string>
+    <string name="desc_type">Type: %1$s</string>
+    <string name="desc_thank_you">I set my challenge to make this application in 3 days using GraphQL and Feature Flag, they are new technologies that I did not use. If you are watching this, thank you for watching!!</string>
+    <string name="til_thank_you">Thank you</string>
+    <string name="til_gift">Gift</string>
 </resources>

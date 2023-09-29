@@ -4,7 +4,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.dimensionResource
@@ -24,10 +23,6 @@ fun DetailScreen(
 
     val detailUiState by detailViewModel.detailUiState.collectAsState()
     val isOpenModal by detailViewModel.openBottomSheet.collectAsState()
-
-    LaunchedEffect(Unit) {
-//        detailViewModel.on()
-    }
 
     DetailContent(
         detailUiState = detailUiState,
