@@ -6,5 +6,5 @@ import com.cesarwillymc.animeapp.util.state.Result
 
 interface CharacterClient {
     suspend fun getCharacters(page: Int): Result<CharacterListResponse>
-    suspend fun getDetail(id: String): Result<CharacterDetailResponse?>
+    suspend fun getDetail(characterId: String): Result<CharacterDetailResponse?>
 }

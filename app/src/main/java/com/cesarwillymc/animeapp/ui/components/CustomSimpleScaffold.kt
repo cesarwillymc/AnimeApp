@@ -1,7 +1,10 @@
 package com.cesarwillymc.animeapp.ui.components
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -19,17 +22,17 @@ import androidx.compose.ui.res.painterResource
 import com.cesarwillymc.animeapp.R
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomSimpleScaffold(
     modifier: Modifier = Modifier,
     toolbarTitle: String = EMPTY_STRING,
     @DrawableRes backIcon: Int = R.drawable.ic_back,
     navigateUp: () -> Unit,
-    content: @Composable (PaddingValues) -> Unit,
+    content: @Composable () -> Unit,
+    actions: @Composable RowScope.() -> Unit = {},
 ) {
     Scaffold(
-        modifier = modifier, topBar = {
+        modifier = modifier.fillMaxSize(), topBar = {
             CustomTopAppBar(
                 title = {
                     Text(
@@ -50,9 +53,14 @@ fun CustomSimpleScaffold(
                             contentDescription = "back"
                         )
                     }
-                }
+                },
+                actions = actions
             )
         },
-        content = content
+        content = { padding ->
+            Box(modifier = Modifier.padding(paddingValues = padding)) {
+                content()
+            }
+        }
     )
 }

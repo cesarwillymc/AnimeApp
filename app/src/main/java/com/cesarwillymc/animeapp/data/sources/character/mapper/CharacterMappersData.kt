@@ -1,6 +1,6 @@
 package com.cesarwillymc.animeapp.data.sources.character.mapper
 
-import com.cesarwillymc.CharacterByIdQuery
+import com.cesarwillymc.CharacterQuery
 import com.cesarwillymc.CharactersQuery
 import com.cesarwillymc.animeapp.data.sources.character.entities.CharacterDetailResponse
 import com.cesarwillymc.animeapp.data.sources.character.entities.CharacterItemResponse
@@ -11,6 +11,7 @@ import com.cesarwillymc.animeapp.data.sources.character.entities.OriginResponse
 import com.cesarwillymc.animeapp.data.sources.character.local.entities.CharacterDetailEntity
 import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterDetail
 import com.cesarwillymc.animeapp.domain.usecase.entities.Episode
+import com.cesarwillymc.animeapp.util.constants.FIVE
 
 
 fun CharactersQuery.Characters.toList(): CharacterListResponse {
@@ -30,7 +31,7 @@ fun CharactersQuery.Characters.toList(): CharacterListResponse {
     )
 }
 
-fun List<CharacterByIdQuery.Episode?>.toList(): List<EpisodeResponse> {
+fun List<CharacterQuery.Episode?>.toList(): List<EpisodeResponse> {
     return mapNotNull { item ->
         item?.let {
             EpisodeResponse(
@@ -40,10 +41,10 @@ fun List<CharacterByIdQuery.Episode?>.toList(): List<EpisodeResponse> {
                 name = it.name.orEmpty()
             )
         }
-    }
+    }.take(FIVE)
 }
 
-fun CharacterByIdQuery.Character.toDetail(): CharacterDetailResponse {
+fun CharacterQuery.Character.toDetail(): CharacterDetailResponse {
     return CharacterDetailResponse(
         created = created.orEmpty(),
         gender = gender.orEmpty(),

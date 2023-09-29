@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AnimeApp</string>
     <string name="home_bottom_bar_label">Home</string>
-    <string name="wishlist_bottom_bar_label">Wishlist</string>
+    <string name="wishlist_bottom_bar_label">Favorite</string>
     <string name="gift_bottom_bar_label">Gift</string>
     <string name="til_try_again">Error try again\n</string>
     <string name="til_home">Home</string>
@@ -9,4 +9,12 @@
     <string name="til_error_load_items">Error loading characters</string>
     <string name="desc_card_character">Item %1$s</string>
     <string name="desc_card_character_image">Character Image</string>
+    <string name="til_added_in_favorite">Character added</string>
+    <string name="lbl_added_in_favorite">Review your character in the screen Favorite</string>
+    <string name="desc_btn_favorite">Icon favorite</string>
+    <string name="til_favorite">Favorite</string>
+    <string name="til_no_favorites">Don\'t have favorites</string>
+    <string name="desc_no_favorites">I cannot found your favorites characters</string>
+    <string name="lbl_error">Error</string>
+    <string name="desc_error_data">Something happens, data no found</string>
 </resources>

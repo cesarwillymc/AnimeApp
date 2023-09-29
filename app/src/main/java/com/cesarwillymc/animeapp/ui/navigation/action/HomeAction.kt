@@ -12,4 +12,8 @@ class HomeAction(navController: NavHostController) {
         )
         navController.navigate(routeReplace)
     }
+
+    val navigateUp: () -> Unit = {
+        navController.navigateUp()
+    }
 }

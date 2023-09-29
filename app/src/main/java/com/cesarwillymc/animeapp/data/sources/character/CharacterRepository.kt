@@ -28,7 +28,7 @@ class CharacterRepository(
             toCharacterDetailDomain()
         }
 
-    override suspend fun getCharactersFromDB(): Flow<List<CharacterItem>> {
+    override fun getCharactersFromDB(): Flow<List<CharacterItem>> {
         return characterDao.getAllCharacters().map { items ->
             items.toListCharacterDomain()
         }

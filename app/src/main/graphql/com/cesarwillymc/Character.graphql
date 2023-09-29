@@ -1,4 +1,4 @@
-query CharacterById($characterId: ID!){
+query Character($characterId: ID!){
     character(id: $characterId) {
         created
         episode {

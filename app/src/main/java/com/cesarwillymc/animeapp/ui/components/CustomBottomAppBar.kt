@@ -4,7 +4,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -39,40 +38,38 @@ fun CustomBottomAppBar(
     currentRoute: String,
     showGiftBottomAppBar: Boolean
 ) {
-    BoxWithConstraints {
-
-        Surface(tonalElevation = dimensionResource(id = R.dimen.Small100)) {
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.TwoDp)),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(dimensionResource(id = R.dimen.Small150))
-            ) {
+    Surface(tonalElevation = dimensionResource(id = R.dimen.Small100)) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.TwoDp)),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(id = R.dimen.Small150))
+        ) {
+            BottomAppBarIcon(
+                modifier = Modifier.weight(ONE_F),
+                icon = R.drawable.ic_home,
+                label = R.string.home_bottom_bar_label,
+                isSelected = currentRoute == BottomAppBarRoute.Main.path,
+                onClick = actions.navigateToMain
+            )
+            BottomAppBarIcon(
+                modifier = Modifier.weight(ONE_F),
+                icon = R.drawable.ic_favorite,
+                label = R.string.wishlist_bottom_bar_label,
+                isSelected = currentRoute == BottomAppBarRoute.Favorite.path,
+                onClick = actions.navigateToFavorite
+            )
+            if (showGiftBottomAppBar)
                 BottomAppBarIcon(
                     modifier = Modifier.weight(ONE_F),
-                    icon = R.drawable.ic_home,
-                    label = R.string.home_bottom_bar_label,
-                    isSelected = currentRoute == BottomAppBarRoute.Main.path,
-                    onClick = actions.navigateToMain
+                    icon = R.drawable.ic_gift,
+                    label = R.string.gift_bottom_bar_label,
+                    isSelected = currentRoute == BottomAppBarRoute.Gift.path,
+                    onClick = actions.navigateToGift
                 )
-                BottomAppBarIcon(
-                    modifier = Modifier.weight(ONE_F),
-                    icon = R.drawable.ic_wishlist,
-                    label = R.string.wishlist_bottom_bar_label,
-                    isSelected = currentRoute == BottomAppBarRoute.Wishlist.path,
-                    onClick = actions.navigateToWishlist
-                )
-                if (showGiftBottomAppBar)
-                    BottomAppBarIcon(
-                        modifier = Modifier.weight(ONE_F),
-                        icon = R.drawable.ic_gift,
-                        label = R.string.gift_bottom_bar_label,
-                        isSelected = currentRoute == BottomAppBarRoute.Gift.path,
-                        onClick = actions.navigateToGift
-                    )
-            }
         }
     }
+
 }
 
 @Composable
@@ -95,8 +92,13 @@ fun BottomAppBarIcon(
     ) {
         Icon(
             painter = painterResource(id = icon),
-            contentDescription = null,
-            tint = if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surface
+            contentDescription = stringResource(id = label),
+            tint = if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surface,
+            modifier = Modifier.size(
+                if (isSelected) dimensionResource(id = R.dimen.ImageIconSelected) else dimensionResource(
+                    id = R.dimen.ImageIcon
+                )
+            )
         )
         Text(
             text = stringResource(id = label),

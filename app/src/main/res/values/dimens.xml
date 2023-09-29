@@ -54,7 +54,9 @@
 
     <!-- Image dimensions in dp -->
     <dimen name="ImageLarge">260dp</dimen>
+    <dimen name="ImageSemiLarge">210dp</dimen>
     <dimen name="ImageIcon">25dp</dimen>
+    <dimen name="ImageIconSelected">30dp</dimen>
     <dimen name="ImageSuperMini">40dp</dimen>
     <dimen name="ImageMini">80dp</dimen>
     <dimen name="ImageMedium">70dp</dimen>

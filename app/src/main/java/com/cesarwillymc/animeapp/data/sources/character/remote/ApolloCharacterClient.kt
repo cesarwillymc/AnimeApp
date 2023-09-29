@@ -2,7 +2,7 @@ package com.cesarwillymc.animeapp.data.sources.character.remote
 
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.Optional
-import com.cesarwillymc.CharacterByIdQuery
+import com.cesarwillymc.CharacterQuery
 import com.cesarwillymc.CharactersQuery
 import com.cesarwillymc.animeapp.data.sources.character.entities.CharacterDetailResponse
 import com.cesarwillymc.animeapp.data.sources.character.entities.CharacterListResponse
@@ -27,9 +27,9 @@ class ApolloCharacterClient(
                 )
         }
     }
-    override suspend fun getDetail(id: String): Result<CharacterDetailResponse?> {
+    override suspend fun getDetail(characterId: String): Result<CharacterDetailResponse?> {
         return getResult {
-            apollo.query(CharacterByIdQuery(id))
+            apollo.query(CharacterQuery(characterId))
                 .execute()
                 .data
                 ?.character

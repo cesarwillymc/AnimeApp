@@ -16,13 +16,13 @@ import com.cesarwillymc.animeapp.ui.components.CustomBottomAppBar
 import com.cesarwillymc.animeapp.ui.navigation.action.BottomAppBarAction
 import com.cesarwillymc.animeapp.ui.navigation.graph.CustomNavGraph
 import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
+import com.cesarwillymc.animeapp.ui.navigation.util.isBottomRoute
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -35,17 +35,18 @@ class MainActivity : ComponentActivity() {
                     navBackStackEntry?.destination?.route ?: BottomAppBarRoute.Main.path
                 Scaffold(
                     bottomBar = {
-                        CustomBottomAppBar(
-                            actions = bottomActions,
-                            currentRoute = currentRoute,
-                            showGiftBottomAppBar = false
-                        )
+                        if (currentRoute.isBottomRoute())
+                            CustomBottomAppBar(
+                                actions = bottomActions,
+                                currentRoute = currentRoute,
+                                showGiftBottomAppBar = false
+                            )
                     }
                 ) { paddingValues ->
                     Box(modifier = Modifier.padding(paddingValues)) {
                         CustomNavGraph(
                             navController = navController,
-                            startDestination = currentRoute,
+                            startDestination = BottomAppBarRoute.Main.path
                         )
                     }
                 }

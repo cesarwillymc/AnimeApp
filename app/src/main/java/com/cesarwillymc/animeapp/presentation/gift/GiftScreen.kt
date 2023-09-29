@@ -5,7 +5,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun GiftScreen(
-    viewModel: GiftViewModel
+    viewModel: GiftViewModel = hiltViewModel()
 ) {
 
 }

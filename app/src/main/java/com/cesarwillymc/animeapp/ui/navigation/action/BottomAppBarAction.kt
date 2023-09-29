@@ -11,7 +11,7 @@ class BottomAppBarAction(navController: NavHostController) {
     val navigateToGift: () -> Unit = {
         navController.navigate(BottomAppBarRoute.Gift.path)
     }
-    val navigateToWishlist: () -> Unit = {
-        navController.navigate(BottomAppBarRoute.Wishlist.path)
+    val navigateToFavorite: () -> Unit = {
+        navController.navigate(BottomAppBarRoute.Favorite.path)
     }
 }

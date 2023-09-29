@@ -1,25 +1,26 @@
 package com.cesarwillymc.animeapp.ui.navigation.graph
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.cesarwillymc.animeapp.presentation.detail.DetailScreen
 import com.cesarwillymc.animeapp.presentation.gift.GiftScreen
 import com.cesarwillymc.animeapp.presentation.home.HomeScreen
-import com.cesarwillymc.animeapp.presentation.wishlist.WishlistScreen
+import com.cesarwillymc.animeapp.presentation.wishlist.FavoriteScreen
 import com.cesarwillymc.animeapp.ui.navigation.action.HomeAction
 import com.cesarwillymc.animeapp.ui.navigation.deeplink.generateDeepLinks
 import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
 import com.cesarwillymc.animeapp.ui.navigation.route.HomeRoute
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomNavGraph(
-    navController: NavHostController = rememberNavController(),
+    navController: NavHostController,
     startDestination: String
 ) {
     val homeActions = remember(navController) { HomeAction(navController) }
@@ -34,16 +35,15 @@ fun CustomNavGraph(
         ) {
             HomeScreen(
                 navigateToDetail = homeActions.navigateToDetail,
-                homeViewModel = hiltViewModel()
             )
         }
 
         composable(
-            route = BottomAppBarRoute.Wishlist.path,
-            deepLinks = BottomAppBarRoute.Wishlist.path.generateDeepLinks()
+            route = BottomAppBarRoute.Favorite.path,
+            deepLinks = BottomAppBarRoute.Favorite.path.generateDeepLinks()
         ) {
-            WishlistScreen(
-                wishlistViewModel = hiltViewModel()
+            FavoriteScreen(
+                navigateToDetail = homeActions.navigateToDetail
             )
         }
 
@@ -52,7 +52,6 @@ fun CustomNavGraph(
             deepLinks = BottomAppBarRoute.Gift.path.generateDeepLinks()
         ) {
             GiftScreen(
-                viewModel = hiltViewModel()
             )
         }
 
@@ -62,7 +61,7 @@ fun CustomNavGraph(
         ) {
             DetailScreen(
                 detailViewModel = hiltViewModel(),
-                navigateUp = navController::navigateUp
+                navigateUp = homeActions.navigateUp
             )
         }
 
