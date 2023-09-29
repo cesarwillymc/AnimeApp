@@ -15,7 +15,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import com.cesarwillymc.animeapp.R
+import com.cesarwillymc.animeapp.presentation.detail.component.ZoomImage
 
 @Composable
 fun ErrorCard(modifier: Modifier = Modifier, error: String, onClickRetry: () -> Unit) {
@@ -46,4 +48,13 @@ fun ErrorCard(modifier: Modifier = Modifier, error: String, onClickRetry: () -> 
             )
         }
     }
+}
+
+@Composable
+@Preview(name = "Light Theme", showBackground = true)
+fun ErrorCardPreview() {
+    ErrorCard(
+        error = stringResource(id = R.string.lbl_error),
+        onClickRetry = {}
+    )
 }

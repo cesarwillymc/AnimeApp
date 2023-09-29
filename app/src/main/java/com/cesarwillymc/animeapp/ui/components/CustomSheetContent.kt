@@ -2,33 +2,23 @@ package com.cesarwillymc.animeapp.ui.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
 import com.cesarwillymc.animeapp.R
-import com.cesarwillymc.animeapp.ui.navigation.action.BottomAppBarAction
-import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
 
@@ -107,7 +97,7 @@ fun GreenDialogSheetContentBody(
             )
         }
         if (titleSecondButton.isNotEmpty()) {
-            GreenOutlineButton(
+            CustomOutlineButton(
                 modifier = Modifier.padding(
                     bottom = dimensionResource(id = R.dimen.Normal100),
                     end = dimensionResource(id = R.dimen.Normal100),

@@ -27,4 +27,5 @@
     <string name="desc_thank_you">I set my challenge to make this application in 3 days using GraphQL and Feature Flag, they are new technologies that I did not use. If you are watching this, thank you for watching!!</string>
     <string name="til_thank_you">Thank you</string>
     <string name="til_gift">Gift</string>
+    <string name="desc_back">back</string>
 </resources>

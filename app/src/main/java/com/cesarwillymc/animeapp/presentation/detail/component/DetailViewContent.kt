@@ -16,8 +16,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import com.cesarwillymc.animeapp.R
 import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterDetail
+import com.cesarwillymc.animeapp.domain.usecase.entities.Location
+import com.cesarwillymc.animeapp.domain.usecase.entities.Origin
+import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 
 @Composable
 fun DetailViewContent(
@@ -99,3 +103,24 @@ fun DetailViewContent(
     }
 }
 
+@Composable
+@Preview(name = "Light Theme", showBackground = true)
+fun CharacterDetailPreview() {
+    AnimeAppTheme(darkTheme = false) {
+        DetailViewContent(
+            CharacterDetail(
+                created = "2018-01-10T19:46:00.622Z",
+                gender = "Female",
+                id = "381",
+                image = "https://rickandmortyapi.com/api/character/avatar/381.jpeg",
+                name = "Woman Rick",
+                species = "Alien",
+                status = "Alive",
+                type = "Chair",
+                location = Location("E234", "Earth","Planet"),
+                episode = listOf(),
+                origin = Origin("Andromeda", "Earth 3242","Galaxy")
+            )
+        )
+    }
+}

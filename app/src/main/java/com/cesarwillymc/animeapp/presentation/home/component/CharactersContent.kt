@@ -69,5 +69,4 @@ fun CharactersContent(
             }
         }
     }
-
 }

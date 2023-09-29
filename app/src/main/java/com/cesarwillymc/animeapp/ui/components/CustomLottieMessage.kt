@@ -19,12 +19,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.cesarwillymc.animeapp.R
+import com.cesarwillymc.animeapp.presentation.gift.components.GiftContent
+import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 
 @Composable
 fun CustomLottieMessage(
@@ -52,7 +56,14 @@ fun CustomLottieMessage(
             )
             HorizontalDivider(modifier = Modifier.padding(dimensionResource(id = R.dimen.Normal100)))
             Text(text = title, style = MaterialTheme.typography.titleLarge)
-            Text(text = message, style = MaterialTheme.typography.bodyMedium)
+            Text(
+                text = message,
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.Normal100)
+                ),
+                textAlign = TextAlign.Justify
+            )
             if (showRetryButton) {
                 TextButton(
                     onClick = onClickRetry, border = BorderStroke(
@@ -69,4 +80,16 @@ fun CustomLottieMessage(
         }
     }
 
+}
+
+@Composable
+@Preview(name = "Light Theme", showBackground = true)
+fun CustomLottieMessagePreview() {
+    AnimeAppTheme { // Use your custom theme with darkTheme set to false
+        CustomLottieMessage(
+            lottie = R.raw.animation_android,
+            title = stringResource(R.string.til_thank_you),
+            message = stringResource(R.string.desc_thank_you)
+        )
+    }
 }

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.cesarwillymc.animeapp.R
 
 @Composable
@@ -33,11 +34,23 @@ fun CustomPrimaryButton(
             disabledContainerColor = Color.Gray,
             disabledContentColor = Color.White
         ),
-        elevation =ButtonDefaults.buttonElevation()
+        elevation = ButtonDefaults.buttonElevation()
     ) {
         Text(
             text = title,
             modifier = Modifier.padding(dimensionResource(id = R.dimen.Small100))
         )
     }
+}
+
+@Composable
+@Preview(name = "Light Theme", showBackground = true)
+fun CustomPrimaryButtonPreview() {
+    CustomPrimaryButton(
+        title = "Submit",
+        textColor = MaterialTheme.colorScheme.background,
+        isEnabled = true,
+        backGroundColor = MaterialTheme.colorScheme.primary,
+        onClick = {}
+    )
 }

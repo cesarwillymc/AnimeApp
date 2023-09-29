@@ -1,6 +1,5 @@
 package com.cesarwillymc.animeapp.presentation.detail.viewModel
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +13,8 @@ import com.cesarwillymc.animeapp.ui.splitIo.SplitConfig
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
 import com.cesarwillymc.animeapp.util.constants.EVENT_FAVORITE
 import com.cesarwillymc.animeapp.util.constants.EVENT_REM_FAVORITE
+import com.cesarwillymc.animeapp.util.constants.TYPE_ACCOUNT
+import com.cesarwillymc.animeapp.util.constants.TYPE_IDENTIFIER
 import com.cesarwillymc.animeapp.util.state.Result
 import com.cesarwillymc.animeapp.util.state.getData
 import com.cesarwillymc.animeapp.util.state.isSuccess
@@ -94,7 +95,14 @@ class DetailViewModel @Inject constructor(
                             )
                         )
                     }
-                    SplitConfig.splitClient?.track(EVENT_REM_FAVORITE, id)
+                    SplitConfig.splitClient?.track(
+                        TYPE_ACCOUNT,
+                        EVENT_REM_FAVORITE,
+                        mapOf(
+                            TYPE_IDENTIFIER to id
+                        )
+                    )
+
                 }
             }
         }
@@ -111,7 +119,13 @@ class DetailViewModel @Inject constructor(
                             )
                         )
                     }
-                    SplitConfig.splitClient?.track(EVENT_FAVORITE, detail.id)
+                    SplitConfig.splitClient?.track(
+                        TYPE_ACCOUNT,
+                        EVENT_FAVORITE,
+                        mapOf(
+                            TYPE_IDENTIFIER to detail.id
+                        )
+                    )
                     onOpenBottomSheet()
                 }
             }

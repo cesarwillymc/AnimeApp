@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import com.cesarwillymc.animeapp.R
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
 
@@ -50,7 +51,7 @@ fun CustomSimpleScaffold(
                     ) {
                         Icon(
                             painter = painterResource(id = backIcon),
-                            contentDescription = "back"
+                            contentDescription = stringResource(R.string.desc_back)
                         )
                     }
                 },
