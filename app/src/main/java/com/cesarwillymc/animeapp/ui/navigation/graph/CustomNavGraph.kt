@@ -8,14 +8,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.cesarwillymc.animeapp.presentation.detail.DetailScreen
+import com.cesarwillymc.animeapp.presentation.favorite.FavoriteScreen
 import com.cesarwillymc.animeapp.presentation.gift.GiftScreen
 import com.cesarwillymc.animeapp.presentation.home.HomeScreen
-import com.cesarwillymc.animeapp.presentation.favorite.FavoriteScreen
+import com.cesarwillymc.animeapp.presentation.maintenance.MaintenanceScreen
 import com.cesarwillymc.animeapp.ui.navigation.action.HomeAction
 import com.cesarwillymc.animeapp.ui.navigation.deeplink.generateDeepLinks
 import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
 import com.cesarwillymc.animeapp.ui.navigation.route.HomeRoute
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,7 +34,7 @@ fun CustomNavGraph(
             deepLinks = BottomAppBarRoute.Main.path.generateDeepLinks()
         ) {
             HomeScreen(
-                navigateToDetail = homeActions.navigateToDetail,
+                navigateToDetail = homeActions.navigateToDetail
             )
         }
 
@@ -51,8 +51,7 @@ fun CustomNavGraph(
             route = BottomAppBarRoute.Gift.path,
             deepLinks = BottomAppBarRoute.Gift.path.generateDeepLinks()
         ) {
-            GiftScreen(
-            )
+            GiftScreen()
         }
 
         composable(
@@ -65,5 +64,10 @@ fun CustomNavGraph(
             )
         }
 
+        composable(
+            route = BottomAppBarRoute.Maintenance.path
+        ) {
+            MaintenanceScreen()
+        }
     }
 }

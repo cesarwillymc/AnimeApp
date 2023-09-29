@@ -30,7 +30,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import coil.compose.rememberImagePainter
 import com.cesarwillymc.animeapp.R
-import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 import com.cesarwillymc.animeapp.util.constants.ONE_F
 import com.cesarwillymc.animeapp.util.constants.ZERO
 import com.cesarwillymc.animeapp.util.constants.ZERO_F

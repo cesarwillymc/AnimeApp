@@ -1,25 +1,24 @@
 package com.cesarwillymc.animeapp.domain.usecase
 
 import com.cesarwillymc.animeapp.data.sources.character.CharacterDataSource
-import com.cesarwillymc.animeapp.data.sources.character.CharacterGeneratorTest
 import com.cesarwillymc.animeapp.util.constants.ZERO
 import com.cesarwillymc.animeapp.util.state.Result
 import com.cesarwillymc.animeapp.util.state.getData
 import com.cesarwillymc.animeapp.util.state.isError
 import com.cesarwillymc.animeapp.util.state.isSuccess
-import io.mockk.MockKAnnotations
+import com.cesarwillymc.animeapp.utils.MockkTest
+import com.cesarwillymc.animeapp.utils.data.UseCaseCharacterGeneratorTest
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
-
 import org.junit.Test
-import java.lang.Exception
 
-class GetCharactersUseCaseTest {
+class GetCharactersUseCaseTest : MockkTest() {
     @RelaxedMockK
     private lateinit var dataSource: CharacterDataSource
 
@@ -28,7 +27,6 @@ class GetCharactersUseCaseTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     @Before
     fun setUp() {
-        MockKAnnotations.init(this)
         useCase = GetCharactersUseCase(dataSource, UnconfinedTestDispatcher())
     }
 

@@ -68,7 +68,11 @@ fun GreenDialogSheetContentBody(
         Image(
             painter = painterResource(id = icon),
             contentDescription = null,
-            modifier = if (forceBigSize) modifierIcon.size(dimensionResource(id = R.dimen.ImageNormal)) else modifierIcon
+            modifier = if (forceBigSize) {
+                modifierIcon.size(dimensionResource(id = R.dimen.ImageNormal))
+            } else {
+                modifierIcon
+            }
         )
         Text(
             text = title,

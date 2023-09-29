@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getCharactersUseCase: GetCharactersUseCase,
+    private val getCharactersUseCase: GetCharactersUseCase
 ) : ViewModel() {
     val charactersList = Pager(PagingConfig(pageSize = LIMIT)) {
         CharacterPager(getCharactersUseCase)

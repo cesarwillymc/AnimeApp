@@ -7,12 +7,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -34,10 +31,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.cesarwillymc.animeapp.R
-import com.cesarwillymc.animeapp.ui.components.CustomExtendedSheetContent
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 import com.cesarwillymc.animeapp.util.constants.EMPTY_STRING
 
+@SuppressWarnings("LongMethod")
 @Composable
 fun TabCard(
     modifier: Modifier = Modifier,
@@ -100,7 +97,6 @@ fun TabCard(
             if (showSubContent) {
                 subContent()
             }
-
         }
         Icon(
             if (showSubContent) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
@@ -137,7 +133,6 @@ fun TabCardDarkPreview() {
                     style = MaterialTheme.typography.bodySmall,
                     textAlign = TextAlign.Start
                 )
-
             }
         )
     }

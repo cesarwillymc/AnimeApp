@@ -42,7 +42,7 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = Color.Black,
     onBackground = Color.Black,
     onSurface = Color.Black,
-    onError = Color.White,
+    onError = Color.White
 
 )
 

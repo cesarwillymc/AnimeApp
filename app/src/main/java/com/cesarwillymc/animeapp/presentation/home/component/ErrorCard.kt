@@ -17,7 +17,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.cesarwillymc.animeapp.R
-import com.cesarwillymc.animeapp.presentation.detail.component.ZoomImage
 
 @Composable
 fun ErrorCard(modifier: Modifier = Modifier, error: String, onClickRetry: () -> Unit) {
@@ -33,11 +32,12 @@ fun ErrorCard(modifier: Modifier = Modifier, error: String, onClickRetry: () -> 
                 .padding(bottom = dimensionResource(id = R.dimen.Normal100))
                 .padding(horizontal = dimensionResource(id = R.dimen.Normal150))
                 .fillMaxWidth(),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.titleLarge
         )
 
         TextButton(
-            onClick = onClickRetry, border = BorderStroke(
+            onClick = onClickRetry,
+            border = BorderStroke(
                 dimensionResource(id = R.dimen.OneDp),
                 MaterialTheme.colorScheme.surface
             )

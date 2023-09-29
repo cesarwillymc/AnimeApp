@@ -13,7 +13,6 @@ import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterDetail
 import com.cesarwillymc.animeapp.domain.usecase.entities.Episode
 import com.cesarwillymc.animeapp.util.constants.FIVE
 
-
 fun CharactersQuery.Characters.toList(): CharacterListResponse {
     return CharacterListResponse(
         next = info?.next,
@@ -74,31 +73,30 @@ fun CharacterQuery.Character.toDetail(): CharacterDetailResponse {
 
 fun CharacterDetail.toDatabase(): CharacterDetailEntity {
     return CharacterDetailEntity(
-            created = created,
-            gender = gender,
-            id = id,
-            image = image,
-            name = name,
-            species = species,
-            status = status,
-            type = type,
-            location = location?.let {
-                LocationResponse(
-                    it.dimension,
-                    it.name,
-                    it.type
-                )
-            },
-            episode = episode?.toListEpisodeResponse(),
-            origin = origin?.let {
-                OriginResponse(
-                    it.dimension,
-                    it.name,
-                    it.type
-                )
-            }
-        )
-
+        created = created,
+        gender = gender,
+        id = id,
+        image = image,
+        name = name,
+        species = species,
+        status = status,
+        type = type,
+        location = location?.let {
+            LocationResponse(
+                it.dimension,
+                it.name,
+                it.type
+            )
+        },
+        episode = episode?.toListEpisodeResponse(),
+        origin = origin?.let {
+            OriginResponse(
+                it.dimension,
+                it.name,
+                it.type
+            )
+        }
+    )
 }
 
 fun List<Episode?>.toListEpisodeResponse(): List<EpisodeResponse> {

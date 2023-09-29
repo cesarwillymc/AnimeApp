@@ -20,7 +20,6 @@ fun FavoriteContent(
     navigateToDetail: (String) -> Unit,
     favoritesFlow: List<CharacterItem>
 ) {
-
     CustomScaffold(
         toolbarTitle = stringResource(id = R.string.til_favorite)
     ) { paddingValues ->
@@ -30,7 +29,7 @@ fun FavoriteContent(
                 title = stringResource(R.string.til_no_favorites),
                 message = stringResource(R.string.desc_no_favorites)
             )
-        } else
+        } else {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -44,6 +43,6 @@ fun FavoriteContent(
                     )
                 }
             }
+        }
     }
-
 }

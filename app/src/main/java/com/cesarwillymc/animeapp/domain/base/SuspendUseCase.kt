@@ -1,8 +1,8 @@
 package com.cesarwillymc.animeapp.domain.base
 
+import com.cesarwillymc.animeapp.util.state.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import com.cesarwillymc.animeapp.util.state.Result
 /**
  * It can be used for use cases that return Unit, Boolean, Int, etc.
  * No mapper needed

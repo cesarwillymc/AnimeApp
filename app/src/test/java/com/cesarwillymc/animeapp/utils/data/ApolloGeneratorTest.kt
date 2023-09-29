@@ -1,4 +1,4 @@
-package com.cesarwillymc.animeapp.data.sources.character.remote
+package com.cesarwillymc.animeapp.utils.data
 
 object ApolloGeneratorTest {
     const val characterID = "381"

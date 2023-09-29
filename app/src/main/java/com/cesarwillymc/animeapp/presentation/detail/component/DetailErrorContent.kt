@@ -1,7 +1,6 @@
 package com.cesarwillymc.animeapp.presentation.detail.component
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.cesarwillymc.animeapp.R
@@ -26,6 +25,6 @@ fun DetailErrorContentPreview() {
         title = stringResource(R.string.lbl_error),
         message = stringResource(R.string.desc_error_data),
         showRetryButton = true,
-        onClickRetry = {  }
+        onClickRetry = { }
     )
 }

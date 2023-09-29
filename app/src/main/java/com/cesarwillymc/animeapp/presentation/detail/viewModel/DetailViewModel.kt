@@ -34,10 +34,11 @@ class DetailViewModel @Inject constructor(
 ) : ViewModel() {
     private val _detailUiState = MutableStateFlow(DetailUiState())
     private val _openBottomSheet = MutableStateFlow(false)
+    private var _characterId = MutableStateFlow(EMPTY_STRING)
 
     val openBottomSheet = _openBottomSheet.asStateFlow()
     val detailUiState = _detailUiState.asStateFlow()
-    private var characterId = MutableStateFlow(EMPTY_STRING)
+    val characterId = _characterId
 
     init {
         onLoadArgument()
@@ -81,7 +82,6 @@ class DetailViewModel @Inject constructor(
                 addFavoriteCharacter(it)
             }
         }
-
     }
 
     fun removeFavoriteCharacter(id: String) {
@@ -102,7 +102,6 @@ class DetailViewModel @Inject constructor(
                             TYPE_IDENTIFIER to id
                         )
                     )
-
                 }
             }
         }
@@ -129,7 +128,6 @@ class DetailViewModel @Inject constructor(
                     onOpenBottomSheet()
                 }
             }
-
         }
     }
 

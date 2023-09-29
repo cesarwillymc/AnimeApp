@@ -9,7 +9,7 @@ import com.cesarwillymc.animeapp.ui.components.CustomScaffold
 @Composable
 fun GiftContent() {
     CustomScaffold(
-        toolbarTitle = stringResource(R.string.til_gift),
+        toolbarTitle = stringResource(R.string.til_gift)
     ) {
         CustomLottieMessage(
             lottie = R.raw.animation_android,

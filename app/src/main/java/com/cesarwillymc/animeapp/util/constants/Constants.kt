@@ -14,6 +14,3 @@ const val EVENT_FAVORITE = "e_favorite"
 const val EVENT_REM_FAVORITE = "e_rem_favorite"
 const val TYPE_IDENTIFIER = "ID"
 const val TYPE_ACCOUNT = "account"
-
-
-

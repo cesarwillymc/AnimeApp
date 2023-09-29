@@ -20,7 +20,6 @@ fun DetailScreen(
     detailViewModel: DetailViewModel,
     navigateUp: () -> Unit
 ) {
-
     val detailUiState by detailViewModel.detailUiState.collectAsState()
     val isOpenModal by detailViewModel.openBottomSheet.collectAsState()
 
@@ -33,7 +32,7 @@ fun DetailScreen(
     CustomFullScreenLoading(
         detailUiState.isLoading
     )
-    if (isOpenModal)
+    if (isOpenModal) {
         ModalBottomSheet(
             shape = RoundedCornerShape(
                 topStart = dimensionResource(id = R.dimen.Normal100),
@@ -47,6 +46,7 @@ fun DetailScreen(
                     forceBigSize = true
                 )
             },
-            onDismissRequest = detailViewModel::onCloseBottomSheet,
+            onDismissRequest = detailViewModel::onCloseBottomSheet
         )
+    }
 }

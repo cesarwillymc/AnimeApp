@@ -3,9 +3,7 @@ package com.cesarwillymc.animeapp.domain.usecase
 import com.cesarwillymc.animeapp.data.sources.character.CharacterDataSource
 import com.cesarwillymc.animeapp.di.IoDispatcher
 import com.cesarwillymc.animeapp.domain.base.FlowUseCase
-import com.cesarwillymc.animeapp.domain.base.SuspendUseCase
 import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterItem
-import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterList
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

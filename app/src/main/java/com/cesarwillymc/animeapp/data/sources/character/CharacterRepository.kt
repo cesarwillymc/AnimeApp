@@ -41,5 +41,4 @@ class CharacterRepository(
 
     override suspend fun deleteCharacterDB(characterId: String): Result<Unit> =
         getResult { characterDao.delete(characterId) }
-
 }

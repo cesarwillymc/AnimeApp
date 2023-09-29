@@ -4,7 +4,6 @@ import androidx.navigation.NavDeepLink
 import androidx.navigation.navDeepLink
 import com.cesarwillymc.animeapp.util.constants.FORMAT_DEEPLINK
 
-
 private const val DOMAIN_APP = "animeapp://cw.mc/"
 private const val DOMAIN_HTTPS = "https://cw.mc/"
 

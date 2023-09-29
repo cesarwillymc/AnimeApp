@@ -2,13 +2,11 @@ package com.cesarwillymc.animeapp.ui.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -30,10 +28,11 @@ fun CustomSimpleScaffold(
     @DrawableRes backIcon: Int = R.drawable.ic_back,
     navigateUp: () -> Unit,
     content: @Composable () -> Unit,
-    actions: @Composable RowScope.() -> Unit = {},
+    actions: @Composable RowScope.() -> Unit = {}
 ) {
     Scaffold(
-        modifier = modifier.fillMaxSize(), topBar = {
+        modifier = modifier.fillMaxSize(),
+        topBar = {
             CustomTopAppBar(
                 title = {
                     Text(

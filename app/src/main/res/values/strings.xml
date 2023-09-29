@@ -28,4 +28,6 @@
     <string name="til_thank_you">Thank you</string>
     <string name="til_gift">Gift</string>
     <string name="desc_back">back</string>
+    <string name="til_alert">Alert</string>
+    <string name="desc_alert">You do not meet the requirements to continue in the application</string>
 </resources>

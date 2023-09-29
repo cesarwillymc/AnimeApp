@@ -2,6 +2,7 @@ package com.cesarwillymc.animeapp.ui.navigation.action
 
 import androidx.navigation.NavHostController
 import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
+import com.cesarwillymc.animeapp.util.constants.ZERO
 
 class BottomAppBarAction(navController: NavHostController) {
 
@@ -13,5 +14,10 @@ class BottomAppBarAction(navController: NavHostController) {
     }
     val navigateToFavorite: () -> Unit = {
         navController.navigate(BottomAppBarRoute.Favorite.path)
+    }
+    val navigateToMaintenance: () -> Unit = {
+        navController.navigate(BottomAppBarRoute.Maintenance.path) {
+            popUpTo(ZERO)
+        }
     }
 }

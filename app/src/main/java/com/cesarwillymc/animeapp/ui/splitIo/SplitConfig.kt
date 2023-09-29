@@ -2,7 +2,6 @@ package com.cesarwillymc.animeapp.ui.splitIo
 
 import android.content.Context
 import android.os.Build
-import android.util.Log
 import com.cesarwillymc.animeapp.BuildConfig
 import io.split.android.client.SplitClient
 import io.split.android.client.SplitClientConfig
@@ -14,7 +13,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-
 
 class SplitConfig constructor(
     private val context: Context
@@ -47,16 +45,19 @@ class SplitConfig constructor(
     }
 
     private fun checkFeatureFlag() {
-        splitClient?.on(SplitEvent.SDK_READY, object : SplitEventTask() {
-            override fun onPostExecution(client: SplitClient) {
-                val treatment = client.getTreatment(BuildConfig.feature_flag)
-                _flagGifActive.update { treatment == "on" }
-            }
+        splitClient?.on(
+            SplitEvent.SDK_READY,
+            object : SplitEventTask() {
+                override fun onPostExecution(client: SplitClient) {
+                    val treatment = client.getTreatment(BuildConfig.feature_flag)
+                    _flagGifActive.update { treatment == "on" }
+                }
 
-            override fun onPostExecutionView(client: SplitClient) {
-                // Do some UI work if needed
+                override fun onPostExecutionView(client: SplitClient) {
+                    // Do some UI work if needed
+                }
             }
-        })
+        )
     }
 
     companion object {

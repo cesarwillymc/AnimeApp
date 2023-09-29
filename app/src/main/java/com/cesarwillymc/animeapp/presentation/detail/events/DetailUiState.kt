@@ -6,5 +6,5 @@ data class DetailUiState(
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
     val detail: CharacterDetail? = null,
-    val isError: Boolean = false,
+    val isError: Boolean = false
 )

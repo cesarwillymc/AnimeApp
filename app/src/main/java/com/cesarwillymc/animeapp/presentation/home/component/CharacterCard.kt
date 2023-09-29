@@ -1,7 +1,6 @@
 package com.cesarwillymc.animeapp.presentation.home.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,7 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,17 +25,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import com.cesarwillymc.animeapp.R
 import com.cesarwillymc.animeapp.domain.usecase.entities.CharacterItem
-import com.cesarwillymc.animeapp.ui.components.CustomBottomAppBar
-import com.cesarwillymc.animeapp.ui.navigation.action.BottomAppBarAction
-import com.cesarwillymc.animeapp.ui.navigation.route.BottomAppBarRoute
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 
 @Composable
@@ -73,7 +67,7 @@ fun CharacterCard(character: CharacterItem?, onclickCharacter: (String) -> Unit)
                 Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.Small100)))
                 Column(verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.Small50))) {
                     Text(text = character.name, style = MaterialTheme.typography.titleMedium)
-                    Divider(modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.Small50)))
+                    HorizontalDivider(modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.Small50)))
                     Text(text = character.species, style = MaterialTheme.typography.titleSmall)
                     Text(text = character.gender, style = MaterialTheme.typography.titleSmall)
                 }

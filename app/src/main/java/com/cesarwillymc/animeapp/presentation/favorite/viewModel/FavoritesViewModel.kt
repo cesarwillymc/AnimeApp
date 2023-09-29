@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoritesViewModel @Inject constructor(
-    private val getFavoriteCharactersUseCase: GetFavoriteCharactersUseCase
+    getFavoriteCharactersUseCase: GetFavoriteCharactersUseCase
 ) : ViewModel() {
 
     private val _favorites = getFavoriteCharactersUseCase(Unit)

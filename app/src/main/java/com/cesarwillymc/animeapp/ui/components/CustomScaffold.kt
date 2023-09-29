@@ -21,7 +21,8 @@ fun CustomScaffold(
     content: @Composable (PaddingValues) -> Unit
 ) {
     Scaffold(
-        modifier = modifier, topBar = {
+        modifier = modifier,
+        topBar = {
             CenterAlignedTopAppBar(
                 title = {
                     Text(

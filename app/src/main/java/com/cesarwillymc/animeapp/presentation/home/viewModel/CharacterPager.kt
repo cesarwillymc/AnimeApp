@@ -9,7 +9,6 @@ import com.cesarwillymc.animeapp.util.state.getData
 import com.cesarwillymc.animeapp.util.state.getError
 import com.cesarwillymc.animeapp.util.state.isSuccess
 
-
 class CharacterPager(private val useCase: GetCharactersUseCase) :
     PagingSource<Int, CharacterItem>() {
 
@@ -37,7 +36,6 @@ class CharacterPager(private val useCase: GetCharactersUseCase) :
             anchorPage?.prevKey?.plus(ONE) ?: anchorPage?.nextKey?.minus(ONE)
         }
     }
-
 
     companion object {
         const val LIMIT = 20

@@ -24,6 +24,7 @@ import com.cesarwillymc.animeapp.domain.usecase.entities.Origin
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 
 @Composable
+@SuppressWarnings("LongMethod")
 fun DetailViewContent(
     character: CharacterDetail
 ) {
@@ -117,9 +118,9 @@ fun CharacterDetailPreview() {
                 species = "Alien",
                 status = "Alive",
                 type = "Chair",
-                location = Location("E234", "Earth","Planet"),
+                location = Location("E234", "Earth", "Planet"),
                 episode = listOf(),
-                origin = Origin("Andromeda", "Earth 3242","Galaxy")
+                origin = Origin("Andromeda", "Earth 3242", "Galaxy")
             )
         )
     }

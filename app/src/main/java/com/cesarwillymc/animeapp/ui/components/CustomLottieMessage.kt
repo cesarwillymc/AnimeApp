@@ -5,7 +5,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -21,13 +20,11 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.cesarwillymc.animeapp.R
-import com.cesarwillymc.animeapp.presentation.gift.components.GiftContent
 import com.cesarwillymc.animeapp.ui.theme.AnimeAppTheme
 
 @Composable
@@ -66,7 +63,8 @@ fun CustomLottieMessage(
             )
             if (showRetryButton) {
                 TextButton(
-                    onClick = onClickRetry, border = BorderStroke(
+                    onClick = onClickRetry,
+                    border = BorderStroke(
                         dimensionResource(id = R.dimen.OneDp),
                         MaterialTheme.colorScheme.surface
                     )
@@ -79,7 +77,6 @@ fun CustomLottieMessage(
             }
         }
     }
-
 }
 
 @Composable

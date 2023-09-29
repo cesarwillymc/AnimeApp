@@ -1,6 +1,5 @@
 package com.cesarwillymc.animeapp.data.sources.character.local.entities
 
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters

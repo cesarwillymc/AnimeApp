@@ -56,5 +56,6 @@ fun CustomOutlineButtonPreview() {
         elevation = ButtonDefaults.buttonElevation(),
         isEnabled = true,
         borderColor = MaterialTheme.colorScheme.primary,
-        onClick = {})
+        onClick = {}
+    )
 }

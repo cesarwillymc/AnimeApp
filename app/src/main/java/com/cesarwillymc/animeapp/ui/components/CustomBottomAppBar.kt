@@ -14,7 +14,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,7 +58,7 @@ fun CustomBottomAppBar(
                 isSelected = currentRoute == BottomAppBarRoute.Favorite.path,
                 onClick = actions.navigateToFavorite
             )
-            if (showGiftBottomAppBar)
+            if (showGiftBottomAppBar) {
                 BottomAppBarIcon(
                     modifier = Modifier.weight(ONE_F),
                     icon = R.drawable.ic_gift,
@@ -67,9 +66,9 @@ fun CustomBottomAppBar(
                     isSelected = currentRoute == BottomAppBarRoute.Gift.path,
                     onClick = actions.navigateToGift
                 )
+            }
         }
     }
-
 }
 
 @Composable
@@ -95,9 +94,13 @@ fun BottomAppBarIcon(
             contentDescription = stringResource(id = label),
             tint = if (isSelected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.surface,
             modifier = Modifier.size(
-                if (isSelected) dimensionResource(id = R.dimen.ImageIconSelected) else dimensionResource(
-                    id = R.dimen.ImageIcon
-                )
+                if (isSelected) {
+                    dimensionResource(id = R.dimen.ImageIconSelected)
+                } else {
+                    dimensionResource(
+                        id = R.dimen.ImageIcon
+                    )
+                }
             )
         )
         Text(

@@ -10,6 +10,7 @@ import com.cesarwillymc.animeapp.util.state.getData
 import com.cesarwillymc.animeapp.util.state.getError
 import com.cesarwillymc.animeapp.util.state.isError
 import com.cesarwillymc.animeapp.util.state.isSuccess
+import com.cesarwillymc.animeapp.utils.data.ApolloGeneratorTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
