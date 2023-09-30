@@ -10,15 +10,15 @@
 
 | Technology         | Logo                                                                                     |
 |--------------------|------------------------------------------------------------------------------------------|
-| GitHub             | <img src="image/icons/github.png" alt="GitHub Logo" width="100" height="100">            |
-| Coil               | <img src="image/icons/coil_android.svg" alt="Coil Logo" width="100" height="100">        |
-| Dagger Hilt        | <img src="image/icons/hilt_dagger.jpeg" alt="Dagger Hilt Logo" width="100" height="100"> |
-| JUnit              | <img src="image/icons/Junit.png" alt="JUnit Logo" width="100" height="100">              |
-| Jetpack Compose    | <img src="image/icons/jetpack.png" alt="Jetpack Compose Logo" width="100" height="100">  |
-| Proguard R8        | <img src="image/icons/proguard.png" alt="Proguard R8 Logo" width="100" height="100">     |
-| Room               | <img src="image/icons/room_android.jpeg" alt="Room Logo" width="100" height="100">       |
-| Split IO           | <img src="image/icons/split_io.png" alt="Split IO Logo" width="100" height="100">        |
-| GraphQL            | <img src="image/icons/graphql.png" alt="GraphQL Logo" width="100" height="100">          |
+| GitHub             | <img src="image/icons/github.png" alt="GitHub Logo" width="250" height="250">            |
+| Coil               | <img src="image/icons/coil_android.svg" alt="Coil Logo" width="250" height="250">        |
+| Dagger Hilt        | <img src="image/icons/hilt_dagger.jpeg" alt="Dagger Hilt Logo" width="250" height="250"> |
+| JUnit              | <img src="image/icons/Junit.png" alt="JUnit Logo" width="250" height="250">              |
+| Jetpack Compose    | <img src="image/icons/jetpack.png" alt="Jetpack Compose Logo" width="250" height="250">  |
+| Proguard R8        | <img src="image/icons/proguard.png" alt="Proguard R8 Logo" width="250" height="250">     |
+| Room               | <img src="image/icons/room_android.jpeg" alt="Room Logo" width="250" height="250">       |
+| Split IO           | <img src="image/icons/split_io.png" alt="Split IO Logo" width="250" height="250">        |
+| GraphQL            | <img src="image/icons/graphql.png" alt="GraphQL Logo" width="250" height="250">          |
 
 
 ## Image of application
