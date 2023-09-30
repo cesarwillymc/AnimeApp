@@ -10,15 +10,16 @@
 
 | Technology         | Logo                                              |
 |--------------------|---------------------------------------------------|
-| GitHub             | ![GitHub Logo](image/icons/github.png)            |
-| Coil               | ![Coil Logo](image/icons/coil_android.svg)        |
-| Dagger Hilt        | ![Dagger Hilt Logo](image/icons/hilt_dagger.jpeg) |
-| JUnit              | ![JUnit Logo](image/icons/Junit.png)              |
-| Jetpack Compose    | ![Jetpack Compose Logo](image/icons/jetpack.png)  |
-| Proguard R8        | ![Proguard R8 Logo](image/icons/proguard.png)     |
-| Room               | ![Room Logo](image/icons/room_android.jpeg)       |
-| Split IO           | ![Split IO Logo](image/icons/split_io.png)        |
-| GraphQL            | ![GraphQL Logo](image/icons/graphql.png)          |
+| GitHub             | <img src="image/icons/github.png" alt="GitHub Logo" width="60" height="60">            |
+| Coil               | <img src="image/icons/coil_android.svg" alt="Coil Logo" width="60" height="60">        |
+| Dagger Hilt        | <img src="image/icons/hilt_dagger.jpeg" alt="Dagger Hilt Logo" width="60" height="60"> |
+| JUnit              | <img src="image/icons/Junit.png" alt="JUnit Logo" width="60" height="60">              |
+| Jetpack Compose    | <img src="image/icons/jetpack.png" alt="Jetpack Compose Logo" width="60" height="60">  |
+| Proguard R8        | <img src="image/icons/proguard.png" alt="Proguard R8 Logo" width="60" height="60">     |
+| Room               | <img src="image/icons/room_android.jpeg" alt="Room Logo" width="60" height="60">       |
+| Split IO           | <img src="image/icons/split_io.png" alt="Split IO Logo" width="60" height="60">        |
+| GraphQL            | <img src="image/icons/graphql.png" alt="GraphQL Logo" width="60" height="60">          |
+
 
 ## Image of application
 | Screenshot                                               | Title                | Technology                                                                           | Description                                                                                                                                                                    |
