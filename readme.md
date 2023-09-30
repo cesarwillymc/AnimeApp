@@ -8,17 +8,17 @@
 
 # Technical Stack
 
-**| Technology         |** Logo                                              |
-**|--------------------|**---------------------------------------------------|
-**| GitHub             |** ![GitHub Logo](image/icons/github.png)            |
-**| Coil               |** ![Coil Logo](image/icons/coil_android.svg)        |
-**| Dagger Hilt        |** ![Dagger Hilt Logo](image/icons/hilt_dagger.jpeg) |
-**| JUnit              |** ![JUnit Logo](image/icons/Junit.png)              |
-**| Jetpack Compose    |** ![Jetpack Compose Logo](image/icons/jetpack.png)  |
-**| Proguard R8        |** ![Proguard R8 Logo](image/icons/proguard.png)     |
-**| Room               |** ![Room Logo](image/icons/room_android.jpeg)       |
-**| Split IO           |** ![Split IO Logo](image/icons/split_io.png)        |
-**| GraphQL            |** ![GraphQL Logo](image/icons/graphql.png)          |
+| Technology         | Logo                                              |
+|--------------------|---------------------------------------------------|
+| GitHub             | ![GitHub Logo](image/icons/github.png)            |
+| Coil               | ![Coil Logo](image/icons/coil_android.svg)        |
+| Dagger Hilt        | ![Dagger Hilt Logo](image/icons/hilt_dagger.jpeg) |
+| JUnit              | ![JUnit Logo](image/icons/Junit.png)              |
+| Jetpack Compose    | ![Jetpack Compose Logo](image/icons/jetpack.png)  |
+| Proguard R8        | ![Proguard R8 Logo](image/icons/proguard.png)     |
+| Room               | ![Room Logo](image/icons/room_android.jpeg)       |
+| Split IO           | ![Split IO Logo](image/icons/split_io.png)        |
+| GraphQL            | ![GraphQL Logo](image/icons/graphql.png)          |
 
 ## Image of application
 | Screenshot                                               | Title                | Technology                                                                           | Description                                                                                                                                                                    |
@@ -36,11 +36,12 @@
 
 ### Local.properties
 Add  this line
-`
+```
 url_graphql=https://rickandmortyapi.com/graphql
 name_database=your_name_database
 split_io_key = your_split_io_key
-feature_flag= anime_app_split`
+feature_flag= anime_app_split
+```
 
 ### Gradle Java
 
