@@ -1,4 +1,7 @@
 # CESAR CANAZA
+
+Introducing a dynamic mobile application that seamlessly integrates GraphQL services to provide you with a wealth of information about Rick and Morty. Powered by an impressive array of modern technologies including Jetpack Compose, Dagger Hilt, JUnit, Split IO, and much more, this app delivers an immersive experience like no other. Explore the Rick and Morty universe with ease and discover the future of mobile app development!
+
 ## Find me at:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white&labelColor=101010)](https://www.facebook.com/cesar.willy.mamani.canaza)
 </br>
