@@ -20,8 +20,6 @@
 | Split IO           | <img src="image/icons/split_io.png" alt="Split IO Logo"  height="250" style="max-width:100%; max-height:100%;">        |
 | GraphQL            | <img src="image/icons/graphql.png" alt="GraphQL Logo"  height="250" style="max-width:100%; max-height:100%;">          |
 
-
-
 ## Image of application
 | Screenshot                                               | Title                | Technology                                                                           | Description                                                                                                                                                                    |
 |----------------------------------------------------------|----------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

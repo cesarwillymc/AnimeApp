@@ -55,9 +55,11 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier.padding(paddingValues)) {
                         CustomNavGraph(
                             navController = navController,
-                            startDestination = if (isNotSafe())
+                            startDestination = if (isNotSafe()) {
                                 BottomAppBarRoute.Maintenance.path
-                            else BottomAppBarRoute.Main.path
+                            } else {
+                                BottomAppBarRoute.Main.path
+                            }
                         )
                     }
                 }
@@ -67,9 +69,7 @@ class MainActivity : ComponentActivity() {
 
     private fun Activity.isNotSafe(): Boolean {
         val rootBeer = RootBeer(this)
-        val isRooted = isEmulator() ||
-                rootBeer.isRooted ||
-                XposedUtils.isUsedXposed(this)
+        val isRooted = isEmulator() || rootBeer.isRooted || XposedUtils.isUsedXposed(this)
         return !BuildConfig.DEBUG && isRooted
     }
 }
