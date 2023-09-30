@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - develop
-      - master
+      - main
   pull_request:
     branches:
       - develop
-      - master
+      - main
 
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
 
       - name: Build App
         run: |
-          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             ./gradlew assembleRelease
           else
             ./gradlew assembleDebug
@@ -57,5 +57,5 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v2
         with:
-          name: app-${{ github.ref == 'refs/heads/master' && 'release' || 'debug' }}
-          path: app/build/outputs/apk/${{ github.ref == 'refs/heads/master' && 'release' || 'debug' }}/app-${{ github.ref == 'refs/heads/master' && 'release' || 'debug' }}.apk
+          name: app-${{ github.ref == 'refs/heads/main' && 'release' || 'debug' }}
+          path: app/build/outputs/apk/${{ github.ref == 'refs/heads/main' && 'release' || 'debug' }}/app-${{ github.ref == 'refs/heads/main' && 'release' || 'debug' }}.apk
