@@ -36,8 +36,6 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val bottomActions =
                     remember(navController) { BottomAppBarAction(navController) }
-                // Validation
-                securityValidations(bottomActions)
 
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentRoute =
@@ -57,7 +55,9 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier.padding(paddingValues)) {
                         CustomNavGraph(
                             navController = navController,
-                            startDestination = BottomAppBarRoute.Main.path
+                            startDestination = if (isNotSafe())
+                                BottomAppBarRoute.Maintenance.path
+                            else BottomAppBarRoute.Main.path
                         )
                     }
                 }
@@ -65,13 +65,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun Activity.securityValidations(bottomActions: BottomAppBarAction) {
+    private fun Activity.isNotSafe(): Boolean {
         val rootBeer = RootBeer(this)
         val isRooted = isEmulator() ||
-            rootBeer.isRooted ||
-            XposedUtils.isUsedXposed(this)
-        if (!BuildConfig.DEBUG && isRooted) {
-            bottomActions.navigateToMaintenance
-        }
+                rootBeer.isRooted ||
+                XposedUtils.isUsedXposed(this)
+        return !BuildConfig.DEBUG && isRooted
     }
 }
